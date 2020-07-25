@@ -159,7 +159,7 @@ func startEchoServer(group: EventLoopGroup, port: Int, useTLS: Bool) throws {
   }
 
   let server = try builder.withServiceProviders([EchoProvider()])
-    .bind(host: "localhost", port: port)
+    .bind(host: "0.0.0.0", port: port)
     .wait()
 
   print("started server: \(server.channel.localAddress!)")
